@@ -10,7 +10,24 @@ AutomationExercise Full-Fledged practice website for Automation Engineers All QA
 
 # Configure Cypress files
 
-On `cypress.config.js` under `e2e` object wite this property `specPattern: "cypress/e2e/**/*.*",`
+On `cypress.config.js` under `e2e` object write this property `specPattern: "cypress/e2e/**/*.*",`
+
+# To generate html report
+
+Install a dev-dependency `npm install cypress-mochawesome-reporter --save-dev`
+On `cypress.config.js` under `e2e` object write this property
+
+` require('cypress-mochawesome-reporter/plugin')(on);`
+
+and under `defineConfig` add `require('cypress-mochawesome-reporter/plugin')(on);`
+
+Navigate to `cypress/support/e2e.js`, and add the import statement using the command below.
+
+`import 'cypress-mochawesome-reporter/register';`
+
+Execute tests with the below command
+
+`npx cypress run --e2e`
 
 # open cli and run tests
 
